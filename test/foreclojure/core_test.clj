@@ -45,6 +45,12 @@
   (is (= (factorial-fun 5) 120))
   (is (= (factorial-fun 8) 40320)))
 
+;; 43. Reverse interleave
+(deftest test-reverse-interleave
+  (is (= '((1 3 5) (2 4 6)) (reverse-interleave [1 2 3 4 5 6] 2)))
+  (is (= '((0 3 6) (1 4 7) (2 5 8)) (reverse-interleave (range 9) 3)))
+  (is (= '((0 5) (1 6) (2 7) (3 8) (4 9)) (reverse-interleave (range 10) 5))))
+
 ;; 64. Intro to reduce
 (deftest intro-to-reduce
   (is (= 15 (reduce + [1 2 3 4 5])))

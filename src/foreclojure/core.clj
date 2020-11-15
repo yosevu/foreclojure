@@ -114,3 +114,13 @@
 
 ;; 4Clojure solution
 #(reduce * (range 1 (inc %)))
+
+;; 43. Reverse interleave
+(defn reverse-interleave
+  "Write a function which reverses the interleave process into x number of subsequences."
+  [coll n]
+  (apply map (fn [& item] item)
+         (partition n coll)))
+
+;; 4Clojure solution
+#(apply map (fn [& args] args) (partition %2 %1))
